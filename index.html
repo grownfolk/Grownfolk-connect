@@ -1,60 +1,109 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grown Folk Wallet Support + Contribution</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Grown Folk United | Profile Over Coins</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: linear-gradient(to bottom right, #ffffff, #f0f4fa);
+      color: #002855;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+      background: linear-gradient(to right, #002855, #c8102e);
+      color: white;
+    }
+    header img {
+      width: 140px;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .section h2 {
+      color: #002855;
+      margin-top: 0;
+    }
+    .contribute-btn {
+      display: block;
+      max-width: 260px;
+      margin: 12px auto;
+      padding: 10px 20px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .card-btn { background: #c8102e; color: #ffffff; }
+    .crypto-btn { background: #002855; color: #ffffff; }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 14px;
+      color: #444;
+      border-top: 1px solid #ccc;
+    }
+    footer a {
+      color: #002855;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Grown Folk Digital Support Statement</h1>
-    <p>Connect your wallet to show support and claim your stake.</p>
-    <button id="connectWallet">Connect Wallet</button>
-    <div id="walletStatus"></div>
-  </header>
 
-  <main id="supportForm" style="display: none;">
-    <label>Name or Nickname</label><br/>
-    <input type="text" id="nameInput"><br/>
+<header>
+  <img src="https://storage.ning.com/topology/rest/1.0/file/get/13534900254?profile=original" alt="GrownFolk Logo" />
+  <h1>Profile Over Coins</h1>
+  <p>The Real Use Case Web3 Forgot</p>
+</header>
 
-    <label>Zip Code</label><br/>
-    <input type="text" id="zipInput"><br/>
+<div class="section">
+  <h2>What It Means</h2>
+  <p>At Grown Folk United, your presence is your stake. We don’t sell hype — we verify real people, in real places, doing real work. Membership isn’t bought — it’s contributed, committed, and tied to your community impact.</p>
+</div>
 
-    <p><strong>Select the issues you support:</strong></p>
-    <div class="checkboxes">
-      <label><input type="checkbox" class="issue" value="Unite Locally"> Unite Locally</label><br/>
-      <label><input type="checkbox" class="issue" value="Improve Handicap Accessibility"> Improve Handicap Accessibility</label><br/>
-      <label><input type="checkbox" class="issue" value="Promote Clean Energy"> Promote Clean Energy</label><br/>
-      <label><input type="checkbox" class="issue" value="Promote Public Relations"> Promote Public Relations</label><br/>
-      <label><input type="checkbox" id="allIssues" value="All of the above"> All of the above</label>
-    </div><br/>
+<div class="section">
+  <h2>Support Statement</h2>
+  <form name="support-form">
+    <label>Full Name (Optional)</label><br>
+    <input type="text" name="name" style="width:100%;padding:8px;margin-bottom:10px;"><br>
+    <label>Zip Code</label><br>
+    <input type="text" name="zip" required style="width:100%;padding:8px;margin-bottom:10px;"><br>
+    <label>Which national issue matters most to you?</label><br>
+    <select name="issue" style="width:100%;padding:8px;margin-bottom:20px;">
+      <option>Clean Energy</option>
+      <option>Handicap Accessibility</option>
+      <option>Public Relations</option>
+      <option>Local Job Creation</option>
+    </select><br>
+    <input type="submit" value="Submit Support" style="background:#002855;color:white;padding:10px 20px;border:none;font-weight:bold;">
+  </form>
+</div>
 
-    <button id="submitSupport">Submit Support</button>
-  </main>
+<div class="section">
+  <h2>Contribute Now</h2>
+  <p>Join now — pay later if needed. Your presence is proof.</p>
+  <a href="https://23290f-2.myshopify.com/products/supporting" class="contribute-btn card-btn" target="_blank">Contribute with Card</a>
+  <a href="https://grownfolk.wallet" class="contribute-btn crypto-btn" target="_blank">Contribute with Crypto</a>
+</div>
 
-  <section id="contributionSection" style="display: none;">
-    <h2>Lock In Your Stake</h2>
-    <p>Choose your contribution level:</p>
-    <button onclick="sendUSDC(36)">Supporter – 36 USDC</button>
-    <button onclick="sendUSDC(365)">Member – 365 USDC</button>
-    <button onclick="sendUSDC(3650)">Founding Member – 3,650 USDC</button>
+<footer>
+  <a href="#faq">FAQ</a>
+  <a href="#bootcamp">Bootcamp Phases</a>
+  <a href="https://grownfolk.crypto" target="_blank">White Paper</a>
+</footer>
 
-    <p>Or enter a custom amount:</p>
-    <input type="number" id="customAmount" placeholder="Amount in USDC" />
-    <button onclick="sendCustomUSDC()">Contribute Custom Amount</button>
-  </section>
-
-  <div id="confirmation" style="display: none;">
-    <h2>Thank you for your contribution.</h2>
-    <p>Your presence and payment have been confirmed.</p>
-    <a href="https://grownfolk.us/?xgi=E76K6P9MyZAL0k">Continue to join Grown Folk United</a>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.7.8/dist/umd/index.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/web3modal@1.9.10/dist/index.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
-  <script src="app.js"></script>
 </body>
 </html>

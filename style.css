@@ -1,0 +1,29 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  padding: 20px;
+}
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+button {
+  padding: 10px 20px;
+  background-color: #c8102e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+input[type="text"], input[type="number"] {
+  width: 300px;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.checkboxes {
+  margin-left: 20px;
+}

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grown Folk Wallet Support + Contribution</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Grown Folk Digital Support Statement</h1>
+    <p>Connect your wallet to show support and claim your stake.</p>
+    <button id="connectWallet">Connect Wallet</button>
+    <div id="walletStatus"></div>
+  </header>
+
+  <main id="supportForm" style="display: none;">
+    <label>Name or Nickname</label><br/>
+    <input type="text" id="nameInput"><br/>
+
+    <label>Zip Code</label><br/>
+    <input type="text" id="zipInput"><br/>
+
+    <p><strong>Select the issues you support:</strong></p>
+    <div class="checkboxes">
+      <label><input type="checkbox" class="issue" value="Unite Locally"> Unite Locally</label><br/>
+      <label><input type="checkbox" class="issue" value="Improve Handicap Accessibility"> Improve Handicap Accessibility</label><br/>
+      <label><input type="checkbox" class="issue" value="Promote Clean Energy"> Promote Clean Energy</label><br/>
+      <label><input type="checkbox" class="issue" value="Promote Public Relations"> Promote Public Relations</label><br/>
+      <label><input type="checkbox" id="allIssues" value="All of the above"> All of the above</label>
+    </div><br/>
+
+    <button id="submitSupport">Submit Support</button>
+  </main>
+
+  <section id="contributionSection" style="display: none;">
+    <h2>Lock In Your Stake</h2>
+    <p>Choose your contribution level:</p>
+    <button onclick="sendUSDC(36)">Supporter – 36 USDC</button>
+    <button onclick="sendUSDC(365)">Member – 365 USDC</button>
+    <button onclick="sendUSDC(3650)">Founding Member – 3,650 USDC</button>
+
+    <p>Or enter a custom amount:</p>
+    <input type="number" id="customAmount" placeholder="Amount in USDC" />
+    <button onclick="sendCustomUSDC()">Contribute Custom Amount</button>
+  </section>
+
+  <div id="confirmation" style="display: none;">
+    <h2>Thank you for your contribution.</h2>
+    <p>Your presence and payment have been confirmed.</p>
+    <a href="https://grownfolk.us/?xgi=E76K6P9MyZAL0k">Continue to join Grown Folk United</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.7.8/dist/umd/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3modal@1.9.10/dist/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

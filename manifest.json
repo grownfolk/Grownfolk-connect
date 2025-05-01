@@ -1,0 +1,22 @@
+{
+  "name": "GrownFolk Connect",
+  "short_name": "GrownFolk",
+  "description": "Connect your wallet to activate your Grown Folk United profile.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00274d",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "grownfolk-icon192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "grownfolk-icon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

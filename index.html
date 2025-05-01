@@ -4,87 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Connect to Grown Folk</title>
+  <link rel="manifest" href="manifest.json">
+  <script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script defer src="app.js"></script>
   <style>
-    body {
-      background: #f9f9f9;
-      color: #00274D;
-      font-family: 'Helvetica Neue', sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 30px;
-      border-radius: 16px;
-    }
-    .logo {
-      width: 100px;
-      margin-bottom: 20px;
-    }
-    .button {
-      display: block;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 14px 24px;
-      border-radius: 8px;
-      margin-bottom: 14px;
-      color: white;
-    }
-    .button.red {
-      background: #C8102E;
-    }
-    .button.blue {
-      background: #003366;
-    }
-    .link {
-      color: #C8102E;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .qr {
-      margin-top: 30px;
-    }
-    .qr img {
-      border-radius: 12px;
-      margin-top: 10px;
-    }
+    body { background: #f9f9f9; color: #00274D; font-family: 'Helvetica Neue', sans-serif; text-align: center; margin: 0; padding: 0; }
+    .container { max-width: 700px; margin: 40px auto; padding: 30px; border-radius: 16px; }
+    .logo { width: 100px; margin-bottom: 20px; }
+    .button { display: block; text-decoration: none; font-weight: bold; padding: 14px 24px; border-radius: 8px; margin-bottom: 14px; color: white; }
+    .button.red { background: #C8102E; }
+    .button.blue { background: #003366; }
+    .link { color: #C8102E; font-weight: bold; text-decoration: none; }
   </style>
 </head>
 <body>
   <div class="container">
-    <img class="logo" src="https://raw.githubusercontent.com/grownfolk/Grownfolk-pwa/main/grownfolk-icon192.png" alt="GrownFolk Logo" />
-    <h2 style="font-size: 24px; margin-bottom: 10px;">Connect to Grown Folk</h2>
-    <p style="font-size: 15px; margin-bottom: 30px;">
-      Link your wallet or create your profile to activate your place in the movement.<br>
-      <strong>Real people. Real power.</strong>
-    </p>
-
-    <a class="button red" href="https://grownfolk.github.io/Grownfolk-connect/" target="_blank" rel="noopener">Connect with Wallet</a>
-    <a class="button blue" href="https://grownfolk.us/?xgi=E76K6P9MyZAL0k" target="_blank" rel="noopener">Create Grown Folk Profile</a>
-
-    <p style="font-size: 13px; margin-top: 18px; color: #444;">
-      Need help? Visit the <a class="link" href="/app">Mobile Setup Page</a>.
-    </p>
-
-    <p style="font-size: 13px; color: #444; margin-top: 16px;">
-      Best experience: open this page in a Web3 browser like
-      <a class="link" href="https://brave.com/download/" target="_blank">Brave</a>,
-      <a class="link" href="https://www.opera.com/crypto" target="_blank">Opera</a>, or use
-      <a class="link" href="https://metamask.io/download/" target="_blank">MetaMask</a>,
-      <a class="link" href="https://trustwallet.com/" target="_blank">Trust Wallet</a>, or
-      <a class="link" href="https://www.coinbase.com/wallet" target="_blank">Coinbase Wallet</a>.
-    </p>
-
-    <p style="font-size: 13px; color: #444;">
-      You can also log in using your <a class="link" href="https://unstoppabledomains.com/" target="_blank">Unstoppable Domain</a> if supported by your wallet.
-    </p>
-
-    <div class="qr">
-      <p style="font-size: 14px; color: #333;">Scan to connect instantly:</p>
-      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://grownfolk.github.io/Grownfolk-connect/&size=200x200" alt="QR Code to Connect" />
-    </div>
+    <img class="logo" src="grownfolk-icon192.png" alt="GrownFolk Logo" />
+    <h2>Connect to Grown Folk</h2>
+    <p>Link your wallet or create your profile to activate your place in the movement.<br><strong>Real people. Real power.</strong></p>
+    <button class="button red" onclick="connectWallet()">Connect with Wallet</button>
+    <a class="button blue" href="https://grownfolk.us/?xgi=E76K6P9MyZAL0k" target="_blank">Create Grown Folk Profile</a>
+    <p style="margin-top:18px;color:#444;">Need help? Visit the <a class="link" href="/app">Mobile Setup Page</a>.</p>
+    <div id="wallet-address" style="margin-top: 20px; font-weight: bold;"></div>
   </div>
 </body>
 </html>

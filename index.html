@@ -2,124 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Connect to Grown Folk</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://unpkg.com/scrollreveal"></script>
   <style>
     body {
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #f4f9ff;
+      background: #f9f9f9;
       color: #00274D;
+      font-family: 'Helvetica Neue', sans-serif;
+      text-align: center;
       margin: 0;
       padding: 0;
-      text-align: center;
     }
     .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 40px 20px;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 16px;
     }
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
     }
-    p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-    .wallet-btns {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 40px;
-    }
-    .wallet-btns a {
-      display: inline-block;
-      padding: 14px 20px;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 8px;
+    .button {
+      display: block;
       text-decoration: none;
-      width: 100%;
-      max-width: 320px;
-      margin: 0 auto;
+      font-weight: bold;
+      padding: 14px 24px;
+      border-radius: 8px;
+      margin-bottom: 14px;
+      color: white;
     }
-    .btn-dark { background-color: #00274D; color: white; }
-    .btn-red { background-color: #9e1b32; color: white; }
-    .logo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 16px;
+    .button.red {
+      background: #C8102E;
+    }
+    .button.blue {
+      background: #003366;
+    }
+    .link {
+      color: #C8102E;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .qr {
       margin-top: 30px;
     }
-    .logo-grid img {
-      max-width: 80px;
-      height: auto;
-      margin: 0 auto;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-    }
-    #fallback {
-      display: none;
-      margin-top: 40px;
-    }
-    #connected {
-      display: none;
-      font-weight: bold;
-      margin-top: 20px;
-      color: green;
+    .qr img {
+      border-radius: 12px;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1 class="reveal-up">Connect to Grown Folk</h1>
-    <p class="reveal-up">Scan the QR code or connect your wallet to get started.</p>
+    <img class="logo" src="https://raw.githubusercontent.com/grownfolk/Grownfolk-pwa/main/grownfolk-icon192.png" alt="GrownFolk Logo" />
+    <h2 style="font-size: 24px; margin-bottom: 10px;">Connect to Grown Folk</h2>
+    <p style="font-size: 15px; margin-bottom: 30px;">
+      Link your wallet or create your profile to activate your place in the movement.<br>
+      <strong>Real people. Real power.</strong>
+    </p>
 
-    <div class="wallet-btns reveal-up">
-      <a href="https://grownfolk.us/?xgi=E76K6P9MyZAL0k" class="btn-dark">Create Grown Folk Profile</a>
-      <a href="#" onclick="connectWallet()" class="btn-red">Connect with Wallet</a>
-    </div>
+    <a class="button red" href="https://grownfolk.github.io/Grownfolk-connect/" target="_blank" rel="noopener">Connect with Wallet</a>
+    <a class="button blue" href="https://grownfolk.us/?xgi=E76K6P9MyZAL0k" target="_blank" rel="noopener">Create Grown Folk Profile</a>
 
-    <div id="connected">Wallet Connected. You’re verified.</div>
+    <p style="font-size: 13px; margin-top: 18px; color: #444;">
+      Need help? Visit the <a class="link" href="/app">Mobile Setup Page</a>.
+    </p>
 
-    <div id="fallback" class="reveal-up">
-      <p>No Web3 wallet detected. Use a supported browser or install one below:</p>
-    <div class="logo-grid">
-  <a href="https://brave.com" target="_blank"><img src="brave.png" alt="Brave" /></a>
-  <a href="https://www.coinbase.com/wallet" target="_blank"><img src="coinbase.png" alt="Coinbase" /></a>
-  <a href="https://metamask.io" target="_blank"><img src="metamask.png" alt="MetaMask" /></a>
-  <a href="https://www.opera.com/crypto" target="_blank"><img src="opera.png" alt="Opera" /></a>
-  <a href="https://trustwallet.com" target="_blank"><img src="trustwallet.png" alt="Trust Wallet" /></a>
-  <a href="https://unstoppabledomains.com" target="_blank"><img src="unstoppable.png" alt="Unstoppable Domains" /></a>
-</div>
+    <p style="font-size: 13px; color: #444; margin-top: 16px;">
+      Best experience: open this page in a Web3 browser like
+      <a class="link" href="https://brave.com/download/" target="_blank">Brave</a>,
+      <a class="link" href="https://www.opera.com/crypto" target="_blank">Opera</a>, or use
+      <a class="link" href="https://metamask.io/download/" target="_blank">MetaMask</a>,
+      <a class="link" href="https://trustwallet.com/" target="_blank">Trust Wallet</a>, or
+      <a class="link" href="https://www.coinbase.com/wallet" target="_blank">Coinbase Wallet</a>.
+    </p>
+
+    <p style="font-size: 13px; color: #444;">
+      You can also log in using your <a class="link" href="https://unstoppabledomains.com/" target="_blank">Unstoppable Domain</a> if supported by your wallet.
+    </p>
+
+    <div class="qr">
+      <p style="font-size: 14px; color: #333;">Scan to connect instantly:</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://grownfolk.github.io/Grownfolk-connect/&size=200x200" alt="QR Code to Connect" />
     </div>
   </div>
-
-  <script>
-    function connectWallet() {
-      if (typeof window.ethereum !== 'undefined') {
-        window.ethereum.request({ method: 'eth_requestAccounts' })
-          .then(accounts => {
-            if (accounts.length > 0) {
-              document.getElementById('connected').style.display = 'block';
-            }
-          });
-      } else {
-        document.getElementById('fallback').style.display = 'block';
-      }
-    }
-
-    // Auto detection on page load
-    window.addEventListener('DOMContentLoaded', () => {
-      ScrollReveal().reveal('.reveal-up', { distance: '40px', origin: 'bottom', duration: 800, interval: 200 });
-
-      if (typeof window.ethereum === 'undefined') {
-        document.getElementById('fallback').style.display = 'block';
-      } else if (window.ethereum.selectedAddress) {
-        document.getElementById('connected').style.display = 'block';
-      }
-    });
-  </script>
 </body>
 </html>
